@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important
+}
+
+
+body {
+    cursor: url("./images/tulipe_image.png"), auto;
+ }
+
+body {
+    background-image: url('https://www.goingestate.com/wp-content/uploads/2023/09/Screen-Shot-2019-02-14-at-4-1.webp');
+    background-size: cover;
+    -webkit-animation: slidein 60s;
+    animation: slidein 60s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+
+main {
+    display: block;
+    width: fit-content;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 100px auto;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    padding: 10px;
+
+}
+
+main img {
+    width: 300px;
+}
+
+main img:hover {
+    scale: 105%;
+    transition-duration: 200ms;
+}
+
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(75, 75, 250, 0.3);
+    border-radius: 3px;
+}
+
+.center h1 {
+    text-align: center;
+    color: white;
+    font-family: 'Source Code Pro', monospace;
+    text-transform: uppercase;
+}
+
+
+
+/* Aniamted border */
+.animated-border {
+    border-radius: 12px;
+    box-shadow: 0px 2px 4px hsl(0 0% 0% / 25%);
+    animation: border-angle-rotate 2s infinite linear;
+    border: 0.5rem solid transparent;
+    position: relative;
+
+    background: linear-gradient(white, white) padding-box,
+        conic-gradient(from var(--border-angle),
+            oklch(100% 100% 0deg),
+            oklch(100% 100% 45deg),
+            oklch(100% 100% 90deg),
+            oklch(100% 100% 135deg),
+            oklch(100% 100% 180deg),
+            oklch(100% 100% 225deg),
+            oklch(100% 100% 270deg),
+            oklch(100% 100% 315deg),
+            oklch(100% 100% 360deg)) border-box;
+}
+
+/*  Text effect  */
+
+.typing-effect-1 {
+    width: 170px;
+    animation: typing 1.5s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 2em;
+  }
+
+
+/* ==================== Animations =============================  */
+
+/* Background image animations */
+@-webkit-keyframes slidein {
+    from {
+        background-position: top;
+        background-size: 3000px;
+    }
+
+    to {
+        background-position: -100px 0px;
+        background-size: 2750px;
+    }
+}
+
+@keyframes slidein {
+    from {
+        background-position: top;
+        background-size: 3000px;
+    }
+
+    to {
+        background-position: -100px 0px;
+        background-size: 2750px;
+    }
+}
+
+/* Main box border */
+
+@keyframes border-angle-rotate {
+    from {
+        --border-angle: 0deg;
+    }
+
+    to {
+        --border-angle: 360deg;
+    }
+}
+
+
+@property --border-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+
+/* Writing effect */
+  
+@keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
